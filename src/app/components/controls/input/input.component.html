@@ -1,0 +1,7 @@
+<mat-form-field [floatLabel]="'always'" [formGroup]="form">
+    <input matInput type="{{control.type}}" [id]="control.id" [required]="control.validations?.Mandatory"
+           placeholder="{{control.label}}" value={{control.value}} [formControlName]="control.id"
+           [maxlength]="controlMaxLength" #input>
+    <mat-hint *ngIf="controlMaxLength" align="end">{{input.value?.length || 0}}/{{controlMaxLength}}</mat-hint>
+    <mat-error *ngIf="controller.invalid">{{controlError}}</mat-error>
+</mat-form-field>

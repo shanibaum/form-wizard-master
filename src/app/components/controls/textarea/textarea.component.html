@@ -1,0 +1,8 @@
+<app-control-layout [layout]="layout">
+  <mat-form-field [floatLabel]="'always'" [formGroup]="form">
+    <!--<div matTooltip="{{control.tooltip}}">-->
+    <textarea matInput type="{{control.type}}" [id]="control.id" rows={{control.rows}} placeholder="{{control.label}}"
+              value={{control.value}} [formControlName]="control.id" [maxlength]="control.maxLength" #input></textarea>
+    <!--</div>-->
+  </mat-form-field>
+</app-control-layout>

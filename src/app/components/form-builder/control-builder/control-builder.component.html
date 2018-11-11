@@ -1,0 +1,6 @@
+<app-control-layout [layout]="layout">
+  <app-dynamic-component-loader [component]="control.type"
+                                [injectableData]="{'control': control}"
+                                [form]="form">
+  </app-dynamic-component-loader>
+</app-control-layout>

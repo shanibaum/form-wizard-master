@@ -1,0 +1,32 @@
+//.control-layout-wrapper {
+//
+//  .control-layout {
+//    box-sizing: border-box; // very important! otherwise the col-xs.. padding will push outward like margin
+//
+//    ::ng-deep > * {
+//      width: 100%;
+//    }
+//  }
+//
+//  .space-before {
+//    margin-left: -30px;
+//  }
+//
+//  .space-after {
+//    margin-left: -30px;
+//  }
+//
+//  .stick-before {
+//    margin-left: -15px;
+//    padding-left: 0;
+//    padding-right: 0;
+//    margin-right: 15px;
+//  }
+//
+//  .stick-after {
+//    margin-left: 15px;
+//    padding-left: 0;
+//    padding-right: 0;
+//    margin-right: -15px;
+//  }
+//}

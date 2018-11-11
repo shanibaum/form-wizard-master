@@ -1,0 +1,25 @@
+<!--<app-control-layout [layout]="layout">-->
+  <mat-form-field [floatLabel]="'always'" [formGroup]="form">
+    <!--<div matTooltip="{{'message.field.tooltip.'+ formControlName | translate}}">-->
+    <input matInput type="text" placeholder="{{control.label}}" [formControlName]="control.id"
+           value={{control.value}} [matAutocomplete]="auto" [maxlength]="controlMaxLength"
+           (change)="onInputChange($event)" (blur)="onBlur()" #input>
+    <div class="mat-select-arrow-wrapper">
+      <div class="mat-select-arrow"></div>
+    </div>
+    <!--</div>-->
+    <mat-autocomplete (opened)="initializeOptions()" #auto (optionSelected)="onChange($event)" [autoActiveFirstOption]="true">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.key">
+        {{ option.value }}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-hint *ngIf="controlMaxLength" align="end">{{input.value?.length || 0}}/{{controlMaxLength}}</mat-hint>
+    <mat-error *ngIf="controller.invalid">{{controlError}}</mat-error>
+  </mat-form-field>
+
+<!--</app-control-layout>-->
+
+
+
+
+

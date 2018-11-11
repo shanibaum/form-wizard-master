@@ -1,0 +1,11 @@
+<app-control-layout [layout]="layout">
+  <mat-form-field [floatLabel]="'always'" [formGroup]="form">
+    <!--<div matTooltip="{{control.tooltip}}">-->
+    <input matInput type="{{control.type}}" [id]="control.id" placeholder="{{control.label}}" value={{control.value}} [formControlName]="control.id"
+           [maxlength]="control.maxLength" #input>
+    <!--</div>-->
+  </mat-form-field>
+  <button type="button" class="drilldown-btn" (click)="onDrillDownButtonClick()" [disabled]="controller.disabled">
+    <i class="material-icons">more_horiz</i>
+  </button>
+</app-control-layout>

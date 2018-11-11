@@ -1,0 +1,78 @@
+::ng-deep input.mat-input-element {
+  position: relative;
+  z-index: 1;
+}
+
+:host-context(.fa-mandatory) {
+  ::ng-deep label.mat-form-field-label {
+    &:before {
+      content: "*";
+      color: red;
+      position: relative;
+      font-size: 16px;
+      float: left;
+      margin-right: 3px;
+      line-height: 16px;
+    }
+  }
+}
+
+:host-context(.fa-highlight) {
+  ::ng-deep label.mat-form-field-label {
+    background-color: yellow;
+  }
+}
+
+:host-context(.fa-verification-sight),
+:host-context(.fa-clickVerification),
+:host-context(.fa-verification-sight-verified),
+:host-context(.fa-clickVerification-verified) {
+  ::ng-deep .mat-form-field-infix {
+    > .mat-input-element {
+      width: 96%;
+    }
+
+    &:after {
+      font-family: 'Material Icons';
+      content: "\E8F5";
+      position: absolute;
+      font-size: 16px;
+      right: 0;
+      top: 5px;
+    }
+  }
+}
+
+:host-context(.fa-verification-sight-verified),
+:host-context(.fa-clickVerification-verified) {
+  ::ng-deep .mat-form-field-infix {
+    &:after {
+      content: "\E8F4";
+    }
+  }
+}
+
+:host-context(.fa-rekeyVerification),
+:host-context(.fa-blindVerification) {
+  ::ng-deep mat-form-field.mat-focused span.mat-form-field-label-wrapper:before {
+    content: attr(inputValue);
+    color: lightgray;
+    top: 6px;
+    position: relative;
+    z-index: 0;
+    letter-spacing: initial;
+  }
+
+  ::ng-deep label.mat-form-field-label {
+    &:before {
+      font-family: 'Material Icons';
+      content: "\e86c";
+      color: inherit;
+      position: relative;
+      font-size: 16px;
+      float: left;
+      margin-right: 3px;
+      line-height: 16px;
+    }
+  }
+}

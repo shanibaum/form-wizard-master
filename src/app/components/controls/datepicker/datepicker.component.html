@@ -1,0 +1,11 @@
+<!--<app-control-layout [layout]="layout">-->
+  <mat-form-field [floatLabel]="'always'" [formGroup]="form">
+    <!--<div matTooltip="{{control.tooltip}}">-->
+    <mat-label>{{control.label}}</mat-label>
+    <input matInput type="{{control.type}}" [matDatepicker]="datepicker" [id]="control.id" placeholder="{{control.format}}"
+           value={{control.value}} [formControlName]="control.id">
+    <!--</div>-->
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker></mat-datepicker>
+  </mat-form-field>
+<!--</app-control-layout>-->
