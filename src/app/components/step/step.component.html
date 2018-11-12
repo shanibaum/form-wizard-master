@@ -1,0 +1,9 @@
+<app-form-generator
+  [formName]="step.formName"
+  [fields]="step.form"
+  [formId]="step.formId"
+></app-form-generator>
+<div>
+  <button mat-button matStepperPrevious>Back</button>
+  <button mat-button matStepperNext (click)="isFormValid()">Next</button>
+</div>

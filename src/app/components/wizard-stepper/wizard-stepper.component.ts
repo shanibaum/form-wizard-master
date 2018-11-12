@@ -24,8 +24,5 @@ export class WizardStepperComponent implements OnInit, OnChanges {
      this.steps = formsWizard.wizardData.steps;
    }
   }
-  //todo
-  isFormValid(formId) {
-    // return this.formElement.nativeElement.valid;
-  }
+
 }

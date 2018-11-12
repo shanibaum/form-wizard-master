@@ -10,11 +10,13 @@ import {MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule} from
 import {BrowserModule} from '@angular/platform-browser';
 import { FormGeneratorModule } from '../../components/form-generator/form-generator.module';
 import { FormDataApiService } from '../../services/form-data-api.service';
+import {StepComponent} from '../../components/step/step.component';
 
 @NgModule({
   declarations: [
     FormWizardComponent,
-    WizardStepperComponent
+    WizardStepperComponent,
+    StepComponent
   ],
   imports: [
     CommonModule,
