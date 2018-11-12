@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { Component , Input , OnChanges , OnInit , SimpleChanges  } from '@angular/core';
 import { FormsWizardDTO } from '../../models/dto/forms-wizard';
 import { StepDTO } from '../../models/dto/step';
 
@@ -24,5 +24,8 @@ export class WizardStepperComponent implements OnInit, OnChanges {
      this.steps = formsWizard.wizardData.steps;
    }
   }
-
+  //todo
+  isFormValid(formId) {
+    // return this.formElement.nativeElement.valid;
+  }
 }

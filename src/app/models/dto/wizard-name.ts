@@ -4,10 +4,10 @@ declare let _: any;
 
 export class WizardNameDTO implements IWizardName {
 
-  name: string;
+  wizardName: string;
 
   constructor(name: string) {
 
-    this.name = name || '';
+    this.wizardName = name || '';
   }
 }

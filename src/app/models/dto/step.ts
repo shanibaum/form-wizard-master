@@ -16,7 +16,7 @@ export class StepDTO extends AbstractDTO implements IStep {
     attributes = attributes || {};
 
     this.form = attributes['form'] || {};
-    this.formId = attributes['formName'] || '';
+    this.formId = attributes['formId'] || '';
     this.formName = attributes['formName'] || '';
     this.stepLabel = attributes['stepLabel'] || '';
     this.stepType = new StepTypeDTO(attributes['stepType'] || {});

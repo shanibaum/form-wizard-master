@@ -1,4 +1,4 @@
-<form [formGroup]="form" *ngIf="controls">
+<form  id={{formId}} [formGroup]="form" *ngIf="controls">
   <h4>{{formName}}</h4>
   <div *ngFor="let control of controls">
     <app-control-builder [control]="control" [form]="form"></app-control-builder>

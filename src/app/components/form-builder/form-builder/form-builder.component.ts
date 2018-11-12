@@ -13,6 +13,7 @@ export class FormBuilderComponent implements OnChanges {
   @Input() innerForm = false;
   @Input() customFormService = undefined;
   @Input() formName: string;
+  @Input() formId: string;
 
   ngOnChanges(changes: SimpleChanges) { // TODO MOVE TO ONINIT ON DEPLOY
     if (this.innerForm) {

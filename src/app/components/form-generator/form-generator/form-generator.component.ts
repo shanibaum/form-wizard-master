@@ -13,6 +13,7 @@ export class FormGeneratorComponent implements OnDestroy, OnChanges {
   dataSubscription;
   @Input() formName: string;
   @Input() fields; // todo typing
+  @Input() formId: string;
 
   constructor() {
   }
@@ -34,5 +35,8 @@ export class FormGeneratorComponent implements OnDestroy, OnChanges {
     this.dataSubscription();
   }
 
+  getForm(){
+    // return this.form;
+  }
 
 }

@@ -1,3 +1,3 @@
 export interface IWizardName  {
-  name: string;
+  wizardName: string;
 }

@@ -1,22 +1,14 @@
-<mat-horizontal-stepper *ngIf="steps">
+<mat-horizontal-stepper *ngIf="steps"  #stepper>
   <mat-step *ngFor="let step of steps"
             [optional]="step.stepType.optional"
             [editable]="step.stepType.editable"
             [completed]="step.stepType.completed"
   >
-    <!--<form>-->
-      <!--<ng-template matStepLabel>{{step.stepLabel}}</ng-template>-->
-      <!--<mat-form-field>-->
-        <!--<div *ngFor="let item of step.form | keyvalue">-->
-          <!--<label>{{item.key}}</label>-->
-          <!--<input matInput value="{{item.value}}" required>-->
-        <!--</div>-->
-      <!--</mat-form-field>-->
-    <!--</form>-->
-    <app-form-generator [formName]="step.formName" [fields]="step.form"></app-form-generator>
+  <!--todo create wizardStepComponent and view form -->
+    <app-form-generator [formName]="step.formName" [fields]="step.form" [formId]="step.formId" ></app-form-generator>
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
+      <button mat-button matStepperNext (click)="isFormValid()">Next</button>
     </div>
   </mat-step>
 
