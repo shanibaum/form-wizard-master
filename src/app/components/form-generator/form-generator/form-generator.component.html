@@ -1,7 +1,13 @@
 <div id="wrapper">
   <div id="right-side">
     <div id="form-content-wrapper" *ngIf="fields">
-      <app-form-builder [formName]="formName" [controls]="fields" [formId]="formId"></app-form-builder>
+      <app-form-builder
+        [formName]="formName"
+        [controls]="fields"
+        [formId]="formId"
+        [form] = "form"
+      ></app-form-builder>
     </div>
   </div>
 </div>
+<input #myInput value="shani">

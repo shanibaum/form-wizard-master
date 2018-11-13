@@ -1,4 +1,4 @@
-import { Component , Input , OnChanges , SimpleChanges } from '@angular/core';
+import { Component , EventEmitter , Input , OnChanges , Output , SimpleChanges } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {FormService} from '../../../services/form.service';
 
@@ -9,7 +9,7 @@ import {FormService} from '../../../services/form.service';
 })
 export class FormBuilderComponent implements OnChanges {
   @Input() controls;
-  form;
+  @Input() form;
   @Input() innerForm = false;
   @Input() customFormService = undefined;
   @Input() formName: string;

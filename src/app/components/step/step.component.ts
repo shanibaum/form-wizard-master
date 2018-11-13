@@ -1,5 +1,7 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {StepDTO} from '../../models/dto/step';
+import { FormGeneratorComponent } from '../form-generator/form-generator/form-generator.component';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-step',
@@ -8,8 +10,7 @@ import {StepDTO} from '../../models/dto/step';
 })
 export class StepComponent implements OnInit {
   @Input() step: StepDTO;
-  @ViewChild('stepForm') stepForm: ElementRef;
-
+  @ViewChild('formGenerator') formGenerator: FormGeneratorComponent;
 
   constructor() { }
 
@@ -17,6 +18,6 @@ export class StepComponent implements OnInit {
   }
 
   isFormValid() {
-    return this.stepForm.nativeElement.valid;
+   return this.formGenerator.form ? this.formGenerator.form.valid : false;
   }
 }
