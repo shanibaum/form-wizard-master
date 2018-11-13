@@ -1,4 +1,5 @@
 import { Component , Input , OnChanges , OnInit , SimpleChanges } from '@angular/core';
+import {FormWizardService} from '../../../services/form-wizard.service';
 
 @Component({
   selector: 'app-control-builder',
@@ -11,7 +12,7 @@ export class ControlBuilderComponent implements OnInit, OnChanges {
   @Input() layout;
   @Input() form;
 
-  constructor() { }
+  constructor(public formWizardSvc: FormWizardService) { }
 
   ngOnInit() {
     // this.data = {'data': this.control};
@@ -21,5 +22,6 @@ export class ControlBuilderComponent implements OnInit, OnChanges {
     if (changes['control'].currentValue) {
       this.data = {'data': this.control};
     }
+    this.formWizardSvc.formElem$.next(this.form);
   }
 }

@@ -9,7 +9,6 @@ import {FormDataApiService} from '../../../services/form-data-api.service';
 })
 export class FormGeneratorComponent  {
   layout;
-  form: FormGroup;
   @Input() formName: string;
   @Input() fields; // todo typing
   @Input() formId: string;

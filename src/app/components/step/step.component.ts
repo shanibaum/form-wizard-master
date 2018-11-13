@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, Output, ViewChild} from '@angular/core';
+import { Component, Input, OnInit, ViewChild} from '@angular/core';
 import {StepDTO} from '../../models/dto/step';
-import { FormGeneratorComponent } from '../form-generator/form-generator/form-generator.component';
-import { FormGroup } from '@angular/forms';
+import {FormBuilderComponent} from '../form-builder/form-builder/form-builder.component';
+import {FormWizardService} from '../../services/form-wizard.service';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-step',
@@ -10,14 +11,24 @@ import { FormGroup } from '@angular/forms';
 })
 export class StepComponent implements OnInit {
   @Input() step: StepDTO;
-  @ViewChild('formGenerator') formGenerator: FormGeneratorComponent;
+  @ViewChild(FormBuilderComponent) formBuilderComponent: FormBuilderComponent;
+  form: FormGroup;
 
-  constructor() { }
+  constructor(public formWizardSvc: FormWizardService) { }
 
   ngOnInit() {
-  }
+    this.formWizardSvc.formElem$.subscribe((form: FormGroup) => {
+       this.form = form;
+    });
 
-  isFormValid() {
-   return this.formGenerator.form ? this.formGenerator.form.valid : false;
   }
+//todo editable
+  isFormValid($event) {
+    if (!this.form.valid) {
+      $event.stopPropagation();
+      $event.preventDefault();
+    } else {
+      return true;
+    }
+}
 }
