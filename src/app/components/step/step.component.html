@@ -6,5 +6,8 @@
 ></app-form-generator>
 <div>
   <button mat-button matStepperPrevious>Back</button>
-  <button mat-button matStepperNext (click)="isFormValid($event)">Next</button>
+  <button *ngIf="!isLastStep; else submitBtn" mat-button matStepperNext (click)="isFormValid()">Next</button>
+  <ng-template #submitBtn>
+    <button mat-button (click)="submit()">Submit</button>
+  </ng-template>
 </div>

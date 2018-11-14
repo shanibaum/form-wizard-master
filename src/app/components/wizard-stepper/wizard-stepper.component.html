@@ -3,12 +3,13 @@
             [optional]="step.stepType.optional"
             [editable]="step.stepType.editable"
             [completed]="step.stepType.completed"
-            [stepControl] = "formsList[stepper.selectedIndex]"
   >
     <app-step
+      [isLastStep] = "stepper.selectedIndex === formsList.length-1"
       [step] = "step"
       [form] = "formsList[stepper.selectedIndex]"
       (IsFormValid) = "notifyIsFormValid($event)"
+      (wizardSubmitted) = "notifyWizardSubmitted()"
     ></app-step>
   </mat-step>
 

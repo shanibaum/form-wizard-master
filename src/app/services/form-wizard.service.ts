@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Config} from '../../../config/config';
-import {HttpClient} from '@angular/common/http';
 import {FormGroup} from '@angular/forms';
+import { HttpClient }  from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,8 @@ export class FormWizardService {
   public getWizard(): Observable<any> {
     return this.http.get(Config.formWizardApiUrl);
   }
-
+  //todo
+  submit(formList: FormGroup[]): Observable<any> {
+    return this.http.post('aaaa', formList);
+  }
 }

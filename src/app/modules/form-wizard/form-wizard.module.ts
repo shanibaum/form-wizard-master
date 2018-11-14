@@ -11,6 +11,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import { FormGeneratorModule } from '../../components/form-generator/form-generator.module';
 import { FormDataApiService } from '../../services/form-data-api.service';
 import {StepComponent} from '../../components/step/step.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {StepComponent} from '../../components/step/step.component';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,

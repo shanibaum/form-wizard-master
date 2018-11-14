@@ -1,4 +1,4 @@
-import { Component , EventEmitter , Input , OnInit , Output , ViewChild } from '@angular/core';
+import { Component , EventEmitter , Input , OnChanges , OnInit , Output , SimpleChanges , ViewChild } from '@angular/core';
 import {StepDTO} from '../../models/dto/step';
 import {FormBuilderComponent} from '../form-builder/form-builder/form-builder.component';
 import {FormGroup} from '@angular/forms';
@@ -10,17 +10,25 @@ import {FormGroup} from '@angular/forms';
 })
 export class StepComponent implements OnInit {
   @Input() step: StepDTO;
+  @Input() isLastStep: boolean;
   @Input() form: FormGroup;
   @ViewChild(FormBuilderComponent) formBuilderComponent: FormBuilderComponent;
   @Output()  IsFormValid: EventEmitter<boolean> = new EventEmitter<boolean>(false);
+  @Output()  wizardSubmitted: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {
+    this.isLastStep = false;
+  }
 
   ngOnInit() {
   }
 
-  isFormValid($event) {
+  isFormValid() {
     this.step.stepType.completed  = this.form.valid;
     this.IsFormValid.emit(this.form.valid);
 }
+  submit() {
+    this.wizardSubmitted.emit(true);
+  }
+
 }
