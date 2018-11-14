@@ -12,8 +12,8 @@ export class StepTypeDTO implements IStepType {
     attributes = attributes || {};
 
     this.completed = attributes['completed'] || false;
-    this.editable = attributes['editable'] || true;
-    this.optional = attributes['optional'] || true;
+    this.editable = attributes['editable'] || false;
+    this.optional = attributes['optional'] || false;
   }
 
 

@@ -8,7 +8,7 @@
 			"formName":"Form A",
 			"stepLabel":"Fill form A",
 			"stepType":{
-				"optional": true,
+				"optional": false,
 				"editable":true,
 				"completed": false
 			},
@@ -115,7 +115,7 @@
       "stepLabel":"Fill form B",
 			"stepType":{
 				"optional": false,
-				"editable":false,
+				"editable":true,
 				"completed": false
 			},
       "form":[
@@ -137,35 +137,6 @@
           "validations": [
             {"name":"MaxLength", "arguments": 35}
           ]
-        },
-        {
-          "type": "autocomplete",
-          "id": "OX_STTLM_CCY",
-          "label": "Currency",
-          "value": "",
-          "validations": [
-            {"name":"Mandatory", "arguments": null},
-            {"name":"ExactLength", "arguments": 3}
-          ]
-        },
-        {
-          "type": "autocomplete",
-          "id": "OX_STTLM_AMT",
-          "label": "Amount",
-          "value": "",
-          "validations": [
-            {"name":"Mandatory", "arguments": null},
-            {"name":"MaxLength", "arguments": 15}
-          ]
-        },
-        {
-          "type": "datepicker",
-          "id": "OX_STTLM_DT_1B",
-          "label": "Value date",
-          "value": "",
-          "validations": [
-            {"name":"Mandatory", "arguments": null}
-          ]
         }
       ]
 		},
@@ -174,49 +145,11 @@
       "formName":"Form C",
       "stepLabel":"Fill form C",
 			"stepType":{
-				"optional": true,
-				"editable":false,
-				"completed": true
+				"optional": false,
+				"editable":true,
+				"completed": false
 			},
       "form":[
-        {
-          "type": "input",
-          "id": "X_END_TO_END_ID",
-          "label": "End to end ID",
-          "value": "",
-          "validations": [
-            {"name":"MaxLength", "arguments": 35}
-          ]
-        },
-        {
-          "type": "autocomplete",
-          "id": "OX_STTLM_CCY",
-          "label": "Currency",
-          "value": "",
-          "validations": [
-            {"name":"Mandatory", "arguments": null},
-            {"name":"ExactLength", "arguments": 3}
-          ]
-        },
-        {
-          "type": "autocomplete",
-          "id": "OX_STTLM_AMT",
-          "label": "Amount",
-          "value": "",
-          "validations": [
-            {"name":"Mandatory", "arguments": null},
-            {"name":"MaxLength", "arguments": 15}
-          ]
-        },
-        {
-          "type": "datepicker",
-          "id": "OX_STTLM_DT_1B",
-          "label": "Value date",
-          "value": "",
-          "validations": [
-            {"name":"Mandatory", "arguments": null}
-          ]
-        },
         {
           "type": "autocomplete",
           "id": "OX_CHRG_BR",

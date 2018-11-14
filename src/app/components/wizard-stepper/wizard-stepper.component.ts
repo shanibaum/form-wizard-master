@@ -1,6 +1,8 @@
-import { Component , Input , OnChanges , OnInit , SimpleChanges  } from '@angular/core';
+import { Component , Input , OnChanges , OnInit , SimpleChanges , ViewChild } from '@angular/core';
 import { FormsWizardDTO } from '../../models/dto/forms-wizard';
 import { StepDTO } from '../../models/dto/step';
+import { FormGroup } from '@angular/forms';
+import { FormWizardService } from '../../services/form-wizard.service';
 
 @Component({
   selector: 'app-wizard-stepper',
@@ -11,11 +13,17 @@ export class WizardStepperComponent implements OnInit, OnChanges {
 
   @Input() formsWizard: FormsWizardDTO;
   steps: StepDTO[];
+  formsList: FormGroup[] = new Array();
+  @ViewChild('stepper') stepper;
 
-  constructor() { }
+  constructor(public formWizardSvc: FormWizardService) { }
 
   ngOnInit() {
-
+    this.formWizardSvc.form$.subscribe((form: FormGroup) => {
+      if (form) {
+        this.formsList.push(form) ;
+      }
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -25,4 +33,7 @@ export class WizardStepperComponent implements OnInit, OnChanges {
    }
   }
 
+  notifyIsFormValid(isValid) {
+    this.steps[this.stepper.selectedIndex - 1 ].stepType.completed = isValid;
+  }
 }

@@ -1,10 +1,15 @@
-<mat-horizontal-stepper *ngIf="steps" >
+<mat-horizontal-stepper linear  #stepper *ngIf="steps" >
   <mat-step *ngFor="let step of steps"
             [optional]="step.stepType.optional"
             [editable]="step.stepType.editable"
             [completed]="step.stepType.completed"
+            [stepControl] = "formsList[stepper.selectedIndex]"
   >
-    <app-step [step] = "step"></app-step>
+    <app-step
+      [step] = "step"
+      [form] = "formsList[stepper.selectedIndex]"
+      (IsFormValid) = "notifyIsFormValid($event)"
+    ></app-step>
   </mat-step>
 
 </mat-horizontal-stepper>

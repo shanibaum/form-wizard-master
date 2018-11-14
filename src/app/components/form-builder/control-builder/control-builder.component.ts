@@ -22,6 +22,6 @@ export class ControlBuilderComponent implements OnInit, OnChanges {
     if (changes['control'].currentValue) {
       this.data = {'data': this.control};
     }
-    this.formWizardSvc.formElem$.next(this.form);
+    // this.formWizardSvc.form$.next(this.form);
   }
 }

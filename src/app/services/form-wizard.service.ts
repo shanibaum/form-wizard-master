@@ -9,7 +9,7 @@ import {FormGroup} from '@angular/forms';
 })
 export class FormWizardService {
 
-  formElem$ = new BehaviorSubject<FormGroup>(null);
+  form$ = new BehaviorSubject<FormGroup>(null);
 
   constructor(private http: HttpClient) { }
 

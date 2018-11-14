@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, ViewChild} from '@angular/core';
+import { Component , EventEmitter , Input , OnInit , Output , ViewChild } from '@angular/core';
 import {StepDTO} from '../../models/dto/step';
 import {FormBuilderComponent} from '../form-builder/form-builder/form-builder.component';
-import {FormWizardService} from '../../services/form-wizard.service';
 import {FormGroup} from '@angular/forms';
 
 @Component({
@@ -11,24 +10,17 @@ import {FormGroup} from '@angular/forms';
 })
 export class StepComponent implements OnInit {
   @Input() step: StepDTO;
+  @Input() form: FormGroup;
   @ViewChild(FormBuilderComponent) formBuilderComponent: FormBuilderComponent;
-  form: FormGroup;
+  @Output()  IsFormValid: EventEmitter<boolean> = new EventEmitter<boolean>(false);
 
-  constructor(public formWizardSvc: FormWizardService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.formWizardSvc.formElem$.subscribe((form: FormGroup) => {
-       this.form = form;
-    });
-
   }
-//todo editable
+
   isFormValid($event) {
-    if (!this.form.valid) {
-      $event.stopPropagation();
-      $event.preventDefault();
-    } else {
-      return true;
-    }
+    this.step.stepType.completed  = this.form.valid;
+    this.IsFormValid.emit(this.form.valid);
 }
 }

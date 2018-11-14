@@ -25,7 +25,7 @@ export class FormBuilderComponent implements OnChanges {
     } else if (this.controls) {
       this.buildMainForm();
     }
-    this.formWizardSvc.formElem$.next(this.form);
+    this.formWizardSvc.form$.next(this.form);
   }
 
   private buildInnerForm() {
