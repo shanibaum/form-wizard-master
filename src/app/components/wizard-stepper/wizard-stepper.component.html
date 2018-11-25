@@ -8,7 +8,7 @@
       [isLastStep] = "stepper.selectedIndex === formsList.length-1"
       [step] = "step"
       [form] = "formsList[stepper.selectedIndex]"
-      (wizardSubmitted) = "notifyWizardSubmitted()"
+      (wizardSubmitted) = "notifyWizardSubmitted($event)"
     ></app-step>
   </mat-step>
 

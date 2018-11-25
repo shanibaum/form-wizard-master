@@ -6,9 +6,10 @@
   ></app-form-generator>
   <div id="step-action-buttons-wrapper">
     <button class="fa-raised-button" *ngIf="!isFirstStep" mat-button matStepperPrevious>Back</button>
-    <button class="fa-raised-button" *ngIf="!isLastStep; else submitBtn" mat-button matStepperNext (click)="isFormValid()">
-      {{step.stepType.optional ? 'Skip' : 'Next'}}
-    </button>
+    <span *ngIf="!isLastStep; else submitBtn">
+      <button class="fa-raised-button"  mat-button matStepperNext (click)="isFormValid()">Next</button>
+      <button class="fa-flat-button" mat-button matStepperNext *ngIf="step.stepType.optional" (click)="isStepSkipped()">Skip</button>
+    </span>
     <ng-template #submitBtn>
       <button class="fa-raised-button" type="submit" mat-button (click)="submit()">Submit</button>
     </ng-template>
