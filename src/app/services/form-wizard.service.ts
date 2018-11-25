@@ -16,8 +16,12 @@ export class FormWizardService {
   public getWizard(): Observable<any> {
     return this.http.get(Config.formWizardApiUrl);
   }
-  //todo
+
   submit(formList: FormGroup[]): Observable<any> {
-    return this.http.post('http://localhost:4200/aaa', formList);
+    const arr  = [];
+    formList.forEach(function(form) {
+      arr.push(form.getRawValue());
+    });
+    return this.http.post(Config.formsSubmitUrl, JSON.stringify(arr) );
   }
 }

@@ -39,6 +39,7 @@ export class StepComponent implements OnInit {
   submit() {
     if ( this.form.invalid ) {
       this.markAllAsTouched( this.form );
+      return;
     }
     this.wizardSubmitted.emit( true );
   }
