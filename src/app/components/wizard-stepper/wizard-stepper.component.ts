@@ -40,7 +40,11 @@ export class WizardStepperComponent implements OnInit, OnChanges {
   }
 
   notifyWizardSubmitted() {
-    this.formWizardSvc.submit(this.formsList);
+    this.formWizardSvc.submit(this.formsList).subscribe(function ( res ) {
+
+    }, err => {
+
+    });
   }
 
 }

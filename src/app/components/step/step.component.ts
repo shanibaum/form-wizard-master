@@ -1,7 +1,7 @@
 import { Component , EventEmitter , Input , OnChanges , OnInit , Output , SimpleChanges , ViewChild } from '@angular/core';
 import {StepDTO} from '../../models/dto/step';
 import {FormBuilderComponent} from '../form-builder/form-builder/form-builder.component';
-import {FormGroup} from '@angular/forms';
+import { FormControl , FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-step',
@@ -26,9 +26,26 @@ export class StepComponent implements OnInit {
   isFormValid() {
     this.step.stepType.completed  = this.form.valid;
     this.IsFormValid.emit(this.form.valid);
+    if (!this.form.valid) {
+      this.markAllAsTouched(this.form);
+    }
 }
   submit() {
     this.wizardSubmitted.emit(true);
   }
 
+  private markAllAsTouched(group: FormGroup ) {
+    Object.keys(group.controls).map((field) => {
+      const control = group.get(field);
+      if (control instanceof FormControl) {
+        if (control.invalid && control.errors['Mandatory']) {
+          control.markAsTouched({ onlySelf: true });
+          control.markAsDirty({ onlySelf: true });
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      } else if (control instanceof FormGroup) {
+        this.markAllAsTouched(control);
+      }
+    });
+  }
 }
