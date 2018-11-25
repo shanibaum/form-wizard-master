@@ -1,6 +1,7 @@
 import { Component , Input , OnChanges , SimpleChanges } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {FormWizardService} from '../../../services/form-wizard.service';
+import { StepDTO } from '../../../models/dto/step';
 
 @Component({
   selector: 'app-form-builder',
@@ -14,6 +15,7 @@ export class FormBuilderComponent implements OnChanges {
   @Input() customFormService = undefined;
   @Input() formName: string;
   @Input() formId: string;
+  @Input() step: StepDTO;
 
   constructor(public formWizardSvc: FormWizardService) {
 

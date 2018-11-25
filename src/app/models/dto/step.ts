@@ -7,6 +7,9 @@ export class StepDTO extends AbstractDTO implements IStep {
   form: Array<any>; // todo
   formId: String;
   formName: String;
+  formDescription: String;
+  formTableName: String;
+  isStepSkipped: boolean;
   stepLabel: String;
   stepType: StepTypeDTO;
 
@@ -18,6 +21,9 @@ export class StepDTO extends AbstractDTO implements IStep {
     this.form = attributes['form'] || {};
     this.formId = attributes['formId'] || '';
     this.formName = attributes['formName'] || '';
+    this.formDescription = attributes['formDescription'] || '';
+    this.formTableName = attributes['formTableName'] || '';
+    this.isStepSkipped = attributes['isStepSkipped'] || false;
     this.stepLabel = attributes['stepLabel'] || '';
     this.stepType = new StepTypeDTO(attributes['stepType'] || {});
   }

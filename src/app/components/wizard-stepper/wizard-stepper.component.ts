@@ -33,14 +33,14 @@ export class WizardStepperComponent implements OnInit, OnChanges {
    }
   }
 
-  notifyIsFormValid(isValid) {
-    if (this.steps[this.stepper.selectedIndex + 1]) {
-      this.steps[this.stepper.selectedIndex + 1].stepType.completed = isValid;
-    }
-  }
-
-  notifyWizardSubmitted(obj) {
-    this.formWizardSvc.submit(this.formsList).subscribe(function ( res ) {
+  notifyWizardSubmitted() {
+    const forms = [];
+    this.formsList.forEach((form, index) => {
+      if (!(this.steps[index] as StepDTO).isStepSkipped) {
+        forms.push(form);
+      }
+    });
+    this.formWizardSvc.submit(forms).subscribe(function ( res ) {
 
     }, err => {
 

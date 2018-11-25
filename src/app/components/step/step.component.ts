@@ -16,19 +16,17 @@ export class StepComponent implements OnInit {
   @ViewChild( FormBuilderComponent ) formBuilderComponent: FormBuilderComponent;
   @Output() IsFormValid: EventEmitter<boolean> = new EventEmitter<boolean>( false );
   @Output() wizardSubmitted: EventEmitter<Object> = new EventEmitter<Object>();
-  isFormSkipped: boolean;
 
   constructor() {
     this.isLastStep = false;
     this.isFirstStep = false;
-    this.isFormSkipped = false;
   }
 
   ngOnInit() {
   }
 
   isStepSkipped() {
-    this.isFormSkipped = true;
+    this.step.isStepSkipped = true;
   }
 
   isFormValid() {
@@ -47,7 +45,7 @@ export class StepComponent implements OnInit {
       this.markAllAsTouched( this.form );
       return;
     }
-    this.wizardSubmitted.emit( {' ' : this.isFormSkipped} );
+    this.wizardSubmitted.emit();
   }
 
   private markAllAsTouched( group: FormGroup ) {

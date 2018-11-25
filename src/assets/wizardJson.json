@@ -6,6 +6,9 @@
 		{
       "formId":"1",
 			"formName":"Fee formula form",
+      "formDescription": "This form create formula",
+      "formTableName": "FEE_FORMULA",
+      "isStepSkipped": false,
 			"stepLabel":"Fee formula",
 			"stepType":{
 				"optional": true,
@@ -130,6 +133,9 @@
 		{
       "formId":"2",
       "formName":"Fee type form",
+      "formDescription": "This form create fee type form",
+      "formTableName": "FEE_TYPE",
+      "isStepSkipped": false,
       "stepLabel":"Fee type",
 			"stepType":{
 				"optional": false,
@@ -161,6 +167,9 @@
 		{
       "formId":"3",
       "formName":"Fee profile form",
+      "formDescription": "This form create profile",
+      "formTableName": "FEE_PROFILE",
+      "isStepSkipped": false,
       "stepLabel":"Fee profile",
 			"stepType":{
 				"optional": false,

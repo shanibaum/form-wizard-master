@@ -1,6 +1,7 @@
 <div id="wrapper">
   <div id="form-content-wrapper" *ngIf="fields">
     <app-form-builder
+      [step] = "step"
       [formName]="formName"
       [controls]="fields"
       [formId]="formId"
