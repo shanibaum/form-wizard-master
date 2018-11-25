@@ -5,8 +5,8 @@
 	[
 		{
       "formId":"1",
-			"formName":"Form A",
-			"stepLabel":"Fill form A",
+			"formName":"Fee formula form",
+			"stepLabel":"Fee formula",
 			"stepType":{
 				"optional": false,
 				"editable":true,
@@ -46,6 +46,24 @@
           "type": "input",
           "id": "X_END_TO_END_ID",
           "label": "End to end ID",
+          "value": "",
+          "validations": [
+            {"name":"MaxLength", "arguments": 35}
+          ]
+        },
+        {
+          "type": "input",
+          "id": "X_END_TO_END_ID1",
+          "label": "End to end ID1",
+          "value": "",
+          "validations": [
+            {"name":"MaxLength", "arguments": 35}
+          ]
+        },
+        {
+          "type": "input",
+          "id": "X_END_TO_END_ID2",
+          "label": "End to end ID2",
           "value": "",
           "validations": [
             {"name":"MaxLength", "arguments": 35}
@@ -111,8 +129,8 @@
 		},
 		{
       "formId":"2",
-      "formName":"Form B",
-      "stepLabel":"Fill form B",
+      "formName":"Fee type form",
+      "stepLabel":"Fee type",
 			"stepType":{
 				"optional": false,
 				"editable":true,
@@ -142,8 +160,8 @@
 		},
 		{
       "formId":"3",
-      "formName":"Form C",
-      "stepLabel":"Fill form C",
+      "formName":"Fee profile form",
+      "stepLabel":"Fee profile",
 			"stepType":{
 				"optional": false,
 				"editable":true,

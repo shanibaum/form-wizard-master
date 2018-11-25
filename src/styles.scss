@@ -1,0 +1,505 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-fin-primary: (
+  50: #694ed6,
+  100: #694ed6,
+  200: #694ed6,
+  300: #694ed6,
+  400: #694ed6,
+  500: #694ed6,
+  600: #694ed6,
+  700: #694ed6,
+  800: #694ed6,
+  900: #694ed6,
+  A100: #694ed6,
+  A200: #694ed6,
+  A400: #694ed6,
+  A700: #694ed6,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$mat-fin-warn: (
+  50: #e42346,
+  100: #e42346,
+  200: #e42346,
+  300: #e42346,
+  400: #e42346,
+  500: #e42346,
+  600: #e42346,
+  700: #e42346,
+  800: #e42346,
+  900: #e42346,
+  A100: #e42346,
+  A200: #e42346,
+  A400: #e42346,
+  A700: #e42346,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$finastra-app-primary: mat-palette($mat-fin-primary);
+$finastra-app-accent:  mat-palette($mat-red, A200, A100, A400);
+$finastra-app-warn:    mat-palette($mat-fin-warn);
+
+$finastra-app-theme: mat-light-theme($finastra-app-primary, $finastra-app-accent, $finastra-app-warn);
+
+
+@include angular-material-theme($finastra-app-theme);
+@include mat-button-theme($finastra-app-theme);
+@include mat-datepicker-theme($finastra-app-theme);
+
+
+$C100: #414141;
+$C75: #717171;
+$C50: #a0a0a0;
+$C25: #cfcfcf;
+$C10: #ebebeb;
+$C05: #f5f5f5;
+$W100: #ffffff;
+$V100: #694ed6;
+$V75: #8f7be1;
+$V50: #b4a6ea;
+$V25: #d9d3f5;
+$F100: #c137a2;
+$F75: #d169ba;
+$F50: #e09bd0;
+$F25: #efcde8;
+$R100: #e42346;
+$R75: #eb5a75;
+$R50: #f191a2;
+$R25: #f8c8d1;
+$A100: #ff8a3e;
+$A75: #ffa86e;
+$A50: #ffc49e;
+$A25: #ffe2ce;
+$Y100: #f0b323;
+$Y75: #f4c65a;
+$Y50: #f7d991;
+$Y25: #fbecc8;
+$L100: #d2d755;
+$L75: #dee180;
+$L50: #e8ebaa;
+$L25: #f4f5d4;
+$G100: #56c271;
+$G75: #81d295;
+$G50: #aae0b8;
+$G25: #d5f0db;
+$B100: #5bc1d7;
+$B75: #84d1e1;
+$B50: #ade0eb;
+$B25: #d6eff5;
+$BgDef: #fafafa;
+
+
+/* Text styles */
+.fa-headline {
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: $C100
+}
+.fa-title {
+  font-size: 18px; //not as in Zeplin but approved by UX designer
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: $C100;
+}
+.fa-subheader {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: $C100;
+}
+.fa-body-bold {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: $C100;
+}
+.fa-body {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: $C100;
+}
+.fa-caption {
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: $C75;
+}
+
+// checkbox //
+.mat-checkbox {
+  .mat-checkbox-frame {
+    border-color: $C75;
+  }
+
+  .mat-ripple-element {
+    background-color: rgba(65, 65, 65, 0.25) !important;
+  }
+
+  &.mat-checkbox-checked {
+    .mat-ripple-element {
+      background-color: rgba(105, 78, 214, 0.25) !important;
+    }
+  }
+
+  &.mat-checkbox-disabled {
+    .mat-checkbox-frame {
+      border-color: $C25;
+    }
+
+    &.mat-checkbox-checked .mat-checkbox-background {
+      background-color: $C50;
+    }
+  }
+}
+
+//multi select checkbox
+.mat-option-pseudo-checkbox {
+  &:after {
+    box-sizing: unset;
+  }
+}
+
+// slide toggle //
+.mat-slide-toggle {
+
+  .mat-slide-toggle-thumb {
+    background-color: $W100;
+  }
+
+  .mat-ripple-element {
+    background-color: rgba(65, 65, 65, 0.25) !important;
+  }
+
+  &.mat-checked {
+    .mat-ripple-element {
+      background-color: rgba(105, 78, 214, 0.25) !important;
+    }
+  }
+
+  &.mat-disabled {
+    .mat-slide-toggle-bar {
+      background-color: #cecece;
+    }
+
+    .mat-slide-toggle-thumb {
+      background-color: $C10;
+    }
+
+    &.mat-checked {
+      .mat-slide-toggle-thumb {
+        background-color: #9f9f9f;
+      }
+    }
+  }
+}
+
+// tooltip //
+.mat-tooltip {
+  background-color: $V100;
+  color: $W100;
+  border-radius: 2px;
+}
+
+.mat-tab-list {
+  .mat-tab-label {
+    @extend .fa-subheader;
+    flex-basis: 0;
+    flex-grow: 1;
+
+    &:focus {
+      background-color: transparent;
+    }
+
+    &.mat-tab-label-active {
+      color: $V100 !important;
+    }
+  }
+}
+
+
+
+// form field // {
+.mat-form-field {
+  margin-top: 0.84375em; //replacement for the infix border top
+
+  .mat-form-field-flex {
+    //background: rgba(105, 78, 214, 0.15);
+    //background: #FBFAFE;
+    //border-top-right-radius: 3px;
+    //border-top-left-radius: 3px;
+
+    .mat-form-field-infix {
+      border-top: 0;
+
+      .mat-select,
+      .mat-input-element {
+        padding-left: 3px;
+      }
+    }
+  }
+
+  .mat-form-field-label {
+    color: $C50;
+    font-size: 14px;
+  }
+
+  .mat-form-field-underline {
+    background-color: $C50;
+  }
+
+  .mat-hint {
+    font-size: 12px;
+    color: $C75;
+    &.mat-hint-error{
+      color:$R100;
+    }
+  }
+
+  .mat-select-disabled .mat-select-value,
+  .mat-input-element:disabled {
+    color: $C100;
+  }
+
+  &.mat-form-field-disabled {
+    .mat-form-field-ripple {
+      background-color: transparent;
+    }
+
+    .mat-form-field-label {
+      color: $C50;
+    }
+
+    .mat-select-arrow {
+      color: $C50 !important;
+    }
+  }
+
+  &.mat-form-field-should-float:not(.mat-focused):not(.mat-form-field-disabled):not(.mat-form-field-invalid) { //idle & filled
+    .mat-form-field-label {
+      color: $C100;
+    }
+
+    .mat-form-field-underline {
+      background-color: $C75;
+    }
+  }
+
+  &:hover:not(.mat-focused):not(.mat-form-field-disabled):not(.mat-form-field-invalid) {
+    .mat-form-field-label {
+      color: $C100;
+    }
+
+    .mat-form-field-underline {
+      background-color: $C100;
+      height: 2px;
+    }
+  }
+
+  &:hover.mat-form-field-invalid {
+    .mat-form-field-underline {
+      height: 2px;
+    }
+  }
+
+  &.mat-form-field-invalid {
+    //.mat-form-field-flex {
+    //  background: rgba(228, 35, 70, 0.15);
+    //}
+
+    .mat-form-field-underline {
+      background-color: $R100;
+      height: 1px;
+    }
+
+    .mat-form-field-label {
+      color: $C50;
+    }
+
+    &.mat-focused {
+      .mat-form-field-label {
+        color: $R100;
+      }
+
+      .mat-form-field-underline {
+        height: 2px;
+      }
+    }
+  }
+}
+
+// buttons //
+.fa-btn {
+  min-width: 88px;
+  height: 36px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: $C100;
+
+  &:hover,
+  &:focus,
+  &:active {
+    .mat-button-focus-overlay {
+      display: none;
+    }
+  }
+}
+
+.fa-raised-button {
+  @extend .fa-btn;
+  background-color: $V100;
+  box-shadow: 0 0 3px 1px $C50;
+  color: $W100;
+  transition: all 0.2s linear;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    background-color: $V100;
+    box-shadow: 0 4px 3px 1px $C50;
+  }
+
+  &:disabled {
+    background-color: $C10;
+    color: $C50;
+    box-shadow: none;
+  }
+}
+
+.fa-flat-button {
+  @extend .fa-btn;
+  background-color: transparent;
+  color: $V100;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    background-color: $C10;
+  }
+
+  &:disabled {
+    color: $C25;
+  }
+}
+
+.fa-bordered-button {
+  @extend .fa-btn;
+  background-color: $W100;
+  box-shadow: 0 0 0 1px $V100;
+  color: $V100;
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    background-color: $V25;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    color: $C25;
+    box-shadow: 0 0 0 1px $C10;
+  }
+}
+
+.mat-button-toggle-group {
+  box-shadow: 0 0 0 1px $V100 !important;
+  height: 36px;
+
+  > .mat-button-toggle {
+    @extend .fa-bordered-button;
+    color: $C100;
+    box-shadow: none;
+    border-radius: 0;
+    text-transform: none;
+    min-width: 0;
+
+    .mat-button-toggle-label-content {
+      line-height: 36px;
+    }
+
+    &.mat-button-toggle-checked {
+      background-color: $V100;
+      color: $W100;
+    }
+
+    &.mat-button-toggle-disabled {
+      cursor: default;
+      color: $C25;
+
+      &:hover {
+        background-color: $W100;
+      }
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $V100;
+    }
+  }
+}
+

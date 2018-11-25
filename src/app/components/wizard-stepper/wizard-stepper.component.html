@@ -1,10 +1,11 @@
 <mat-horizontal-stepper linear  #stepper *ngIf="steps" >
-  <mat-step *ngFor="let step of steps"
+  <mat-step class="wizard-step" *ngFor="let step of steps"
             [optional]="step.stepType.optional"
             [editable]="step.stepType.editable"
-            [completed]="step.stepType.completed"
-  >
-    <app-step
+            [completed]="step.stepType.completed">
+    <ng-template matStepLabel>{{step.stepLabel}}</ng-template>
+
+    <app-step class="app-step"
       [isLastStep] = "stepper.selectedIndex === formsList.length-1"
       [step] = "step"
       [form] = "formsList[stepper.selectedIndex]"

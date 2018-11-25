@@ -1,13 +1,14 @@
-<app-form-generator
-  #formGenerator
-  [formName]="step.formName"
-  [fields]="step.form"
-  [formId]="step.formId"
-></app-form-generator>
-<div>
-  <button mat-button matStepperPrevious>Back</button>
-  <button *ngIf="!isLastStep; else submitBtn" mat-button matStepperNext (click)="isFormValid()">Next</button>
-  <ng-template #submitBtn>
-    <button mat-button (click)="submit()">Submit</button>
-  </ng-template>
+<div class="step-wrapper">
+  <app-form-generator
+    [formName]="step.formName"
+    [fields]="step.form"
+    [formId]="step.formId"
+  ></app-form-generator>
+  <div id="step-action-buttons-wrapper">
+    <button class="fa-raised-button" mat-button matStepperPrevious>Back</button>
+    <button class="fa-raised-button" *ngIf="!isLastStep; else submitBtn" mat-button matStepperNext (click)="isFormValid()">Next</button>
+    <ng-template #submitBtn>
+      <button class="fa-raised-button" mat-button (click)="submit()">Submit</button>
+    </ng-template>
+  </div>
 </div>

@@ -6,7 +6,7 @@ import {FormGroup} from '@angular/forms';
 @Component({
   selector: 'app-step',
   templateUrl: './step.component.html',
-  styleUrls: ['./step.component.css']
+  styleUrls: ['./step.component.scss']
 })
 export class StepComponent implements OnInit {
   @Input() step: StepDTO;

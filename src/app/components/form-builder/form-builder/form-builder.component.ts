@@ -8,8 +8,8 @@ import {FormWizardService} from '../../../services/form-wizard.service';
   styleUrls: ['./form-builder.component.scss'],
 })
 export class FormBuilderComponent implements OnChanges {
-  @Input() controls;
   form;
+  @Input() controls;
   @Input() innerForm = false;
   @Input() customFormService = undefined;
   @Input() formName: string;
