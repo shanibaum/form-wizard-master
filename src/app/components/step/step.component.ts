@@ -6,7 +6,7 @@ import { FormControl , FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-step',
   templateUrl: './step.component.html',
-  styleUrls: ['./step.component.css']
+  styleUrls: ['./step.component.scss']
 })
 export class StepComponent implements OnInit {
   @Input() step: StepDTO;
@@ -26,7 +26,6 @@ export class StepComponent implements OnInit {
   isFormValid() {
     this.step.stepType.completed  = this.form.valid;
     this.IsFormValid.emit(this.form.valid);
-    if (!this.form.valid) {
     if (this.form.invalid) {
       this.markAllAsTouched(this.form);
     }
