@@ -1,6 +1,4 @@
 import { Component , EventEmitter , Input , OnChanges , OnDestroy , Output , SimpleChanges } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import {FormDataApiService} from '../../../services/form-data-api.service';
 
 @Component({
   selector: 'app-form-generator',

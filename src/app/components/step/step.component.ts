@@ -27,6 +27,7 @@ export class StepComponent implements OnInit {
     this.step.stepType.completed  = this.form.valid;
     this.IsFormValid.emit(this.form.valid);
     if (!this.form.valid) {
+    if (this.form.invalid) {
       this.markAllAsTouched(this.form);
     }
 }

@@ -1,5 +1,10 @@
 @import "../../../styles/verifications-and-validations";
 
-.mat-form-field {
-  width: 100%;
+.fa-datepicker {
+  ::ng-deep .mat-form-field-suffix {
+    position: absolute;
+    right: 0;
+    bottom: 23px;
+    z-index: 1;
+  }
 }

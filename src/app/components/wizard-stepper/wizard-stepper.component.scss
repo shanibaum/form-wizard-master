@@ -1,0 +1,13 @@
+::ng-deep .mat-step-header {
+  flex-direction: column;
+  justify-content: center;
+
+  > * {
+    margin-bottom: 5px;
+  }
+}
+
+.app-step {
+  display: flex;
+  justify-content: center;
+}

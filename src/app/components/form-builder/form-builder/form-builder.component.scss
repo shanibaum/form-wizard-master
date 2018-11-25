@@ -1,0 +1,17 @@
+.fa-headline {
+  text-align: center;
+  margin-bottom: 3%;
+  margin-top: 1%;
+}
+
+form {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: auto auto;
+  width: 80%;
+
+  > * {
+    margin-right: 30px;
+  }
+}
