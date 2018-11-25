@@ -4,8 +4,9 @@
             [editable]="step.stepType.editable"
             [completed]="step.stepType.completed">
     <ng-template matStepLabel>{{step.stepLabel}}</ng-template>
-
+{{step.stepType.optional}}
     <app-step class="app-step"
+      [isFirstStep] = "stepper.selectedIndex === 0"
       [isLastStep] = "stepper.selectedIndex === formsList.length-1"
       [step] = "step"
       [form] = "formsList[stepper.selectedIndex]"

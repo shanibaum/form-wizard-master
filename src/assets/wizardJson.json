@@ -8,7 +8,7 @@
 			"formName":"Fee formula form",
 			"stepLabel":"Fee formula",
 			"stepType":{
-				"optional": false,
+				"optional": true,
 				"editable":true,
 				"completed": false
 			},
