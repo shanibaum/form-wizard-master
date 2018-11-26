@@ -58,12 +58,17 @@ export class FormValidatorsService {
   public static MaxLength(length) {
     return (control: AbstractControl) => {
 
+      if (control.value instanceof moment) {
+          return null;
+      }
+
       if (control.value == null || control.value.length === 0) { // empty value is allowed
         return null;
       }
       if (control.value != null && control.value.length != null && control.value.length <= parseInt(length)) {
         return null;
       }
+
       return {MaxLength: true};
     };
   }

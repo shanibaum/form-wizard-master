@@ -37,7 +37,7 @@ export class WizardStepperComponent implements OnInit, OnChanges {
     const forms = [];
     this.formsList.forEach((form, index) => {
       if (!(this.steps[index] as StepDTO).isStepSkipped) {
-        forms.push(form);
+        forms.push({'fields': form, 'table_name' : this.steps[index].formTableName});
       }
     });
     this.formWizardSvc.submit(forms).subscribe(function ( res ) {

@@ -66,6 +66,6 @@ export class DatepickerComponent extends AbstractTextControlComponent implements
 
   ngOnInit() {
     super.ngOnInit();
-    this.control['format'] = 'DD/MM/YYYY'
+    this.control['format'] = 'DD/MM/YYYY';
   }
 }

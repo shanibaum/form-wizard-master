@@ -17,10 +17,10 @@ export class FormWizardService {
     return this.http.get(Config.formWizardApiUrl);
   }
 
-  submit(formList: FormGroup[]): Observable<any> {
+  submit(formList): Observable<any> {
     const arr  = [];
     formList.forEach(function(form) {
-      arr.push(form.getRawValue());
+      arr.push({'fields': form.fields.getRawValue(), 'tableName': form.table_name});
     });
     return this.http.post(Config.formsSubmitUrl, JSON.stringify(arr) );
   }
